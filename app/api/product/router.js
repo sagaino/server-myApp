@@ -9,7 +9,7 @@ const {
   deleteProduct,
 } = require("./controller");
 
-router.get("/product", auth, getAllProduct);
+router.get("/product", getAllProduct);
 router.post("/product/create", auth, upload.single("image"), createProduct);
 router.put("/product/edit/:id", auth, upload.single("image"), updateProduct);
 router.delete("/product/delete/:id", auth, deleteProduct);
