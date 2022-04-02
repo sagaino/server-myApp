@@ -90,7 +90,7 @@ module.exports = {
             message: "Id product not found",
           });
         }
-        await fs.unlink(path.join(`public/${checkProduct.image}`));
+        // await fs.unlink(path.join(`public/${checkProduct.image}`));
 
         const product = await checkProduct.update({
           name,
@@ -119,11 +119,10 @@ module.exports = {
         },
       });
       if (checkProduct) {
-        await fs.unlink(path.join(`public/${checkProduct.image}`));
-        const product = await checkProduct.destroy();
+        // await fs.unlink(path.join(`public/${checkProduct.image}`));
+        await checkProduct.destroy();
         res.status(200).json({
           message: "success delete product",
-          data: product,
         });
       } else {
         res.status(404).json({
