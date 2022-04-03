@@ -7,9 +7,11 @@ const {
   createProduct,
   updateProduct,
   deleteProduct,
+  getDetailProduct,
 } = require("./controller");
 
 router.get("/product", getAllProduct);
+router.get("/product/:id", getDetailProduct);
 router.post("/product/create", auth, upload.single("image"), createProduct);
 router.put("/product/edit/:id", auth, upload.single("image"), updateProduct);
 router.delete("/product/delete/:id", auth, deleteProduct);

@@ -24,6 +24,23 @@ module.exports = {
     }
   },
 
+  getDetailProduct: async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      const detailProduct = await Product.findOne({
+        where: {
+          id: id,
+        },
+      });
+      res.status(200).json({
+        message: "success get detail product",
+        data: detailProduct,
+      });
+    } catch (err) {
+      next(err);
+    }
+  },
+
   createProduct: async (req, res, next) => {
     try {
       if (!req.file) {
