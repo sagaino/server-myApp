@@ -42,27 +42,32 @@ module.exports = {
     try {
       const { name, email, password, confirmPassword } = req.body;
       if (validator.isEmail(email)) {
-        if (password !== confirmPassword) {
-          res
-            .status(403)
-            .json({ message: "Password and confirm password dont match" });
+        if (password.length < 5) {
+          res.status(403).json({ message: "Password must >5" });
+        } else {
+          if (password !== confirmPassword) {
+            res
+              .status(403)
+              .json({ message: "Password and confirm password dont match" });
+          } else {
+            const checkEmail = await User.findOne({ where: { email: email } });
+            if (checkEmail) {
+              return res.status(403).json({ message: "email sudah ada" });
+            } else {
+              const user = await User.create({
+                name,
+                email,
+                password: bcrypt.hashSync(password, 10),
+                role: "admin",
+              });
+              delete user.dataValues.password;
+              res.status(201).json({
+                message: "sukses signup",
+                data: user,
+              });
+            }
+          }
         }
-        const checkEmail = await User.findOne({ where: { email: email } });
-        if (checkEmail) {
-          return res.status(403).json({ message: "email sudah ada" });
-        }
-
-        const user = await User.create({
-          name,
-          email,
-          password: bcrypt.hashSync(password, 10),
-          role: "admin",
-        });
-        delete user.dataValues.password;
-        res.status(201).json({
-          message: "sukses signup",
-          data: user,
-        });
       } else {
         res.status(403).json({ message: "Format Email salah" });
       }

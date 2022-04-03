@@ -10,6 +10,8 @@ module.exports = {
           image: "/upload/image 1.png",
           stock: 100,
           price: 90,
+          description:
+            "inoad hanondokasnkdnjjnb sjnjndwubas njnsadnqdjnjns jnjndjnas danjsnndnwj nsjan",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -18,6 +20,8 @@ module.exports = {
           image: "/upload/image 2.png",
           stock: 100,
           price: 90,
+          description:
+            "inoad hanondokasnkdnjjnb sjnjndwubas njnsadnqdjnjns jnjndjnas danjsnndnwj nsjan",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -26,6 +30,8 @@ module.exports = {
           image: "/upload/image 3.png",
           stock: 100,
           price: 90,
+          description:
+            "inoad hanondokasnkdnjjnb sjnjndwubas njnsadnqdjnjns jnjndjnas danjsnndnwj nsjan",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -34,6 +40,8 @@ module.exports = {
           image: "/upload/image 4.png",
           stock: 100,
           price: 90,
+          description:
+            "inoad hanondokasnkdnjjnb sjnjndwubas njnsadnqdjnjns jnjndjnas danjsnndnwj nsjan",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -42,6 +50,8 @@ module.exports = {
           image: "/upload/image 5.png",
           stock: 100,
           price: 90,
+          description:
+            "inoad hanondokasnkdnjjnb sjnjndwubas njnsadnqdjnjns jnjndjnas danjsnndnwj nsjan",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -50,6 +60,8 @@ module.exports = {
           image: "/upload/image 6.png",
           stock: 100,
           price: 90,
+          description:
+            "inoad hanondokasnkdnjjnb sjnjndwubas njnsadnqdjnjns jnjndjnas danjsnndnwj nsjan",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

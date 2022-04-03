@@ -31,12 +31,13 @@ module.exports = {
           message: "no file uploaded",
         });
       }
-      const { name, price, stock } = req.body;
+      const { name, price, stock, description } = req.body;
       const image = `/upload/${req.file.filename}`;
       const product = await Product.create({
         name,
         price,
         stock,
+        description,
         image,
       });
 
@@ -53,7 +54,7 @@ module.exports = {
     try {
       if (!req.file) {
         const { id } = req.params;
-        const { name, price, stock } = req.body;
+        const { name, price, stock, description } = req.body;
         const checkProduct = await Product.findOne({
           where: {
             id: id,
@@ -69,6 +70,7 @@ module.exports = {
           name,
           price,
           stock,
+          description,
         });
 
         res.status(200).json({
@@ -77,7 +79,7 @@ module.exports = {
         });
       } else {
         const { id } = req.params;
-        const { name, price, stock } = req.body;
+        const { name, price, stock, description } = req.body;
         const image = `/upload/${req.file.filename}`;
 
         const checkProduct = await Product.findOne({
@@ -96,6 +98,7 @@ module.exports = {
           name,
           price,
           stock,
+          description,
           image,
         });
 
